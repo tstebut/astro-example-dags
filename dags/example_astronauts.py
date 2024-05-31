@@ -48,8 +48,12 @@ def example_astronauts():
         of Astronauts to be used in the next task.
         """
         r = requests.get("http://api.open-notify.org/astros.json")
-        number_of_people_in_space = r.json()["number"]
+        new_person = {"name" : "Yabir Canario de la Mota", "craft" : "Komeet dominican bus"}
+        r.json()["people"].append(new_person)
         list_of_people_in_space = r.json()["people"]
+        number_of_people_in_space = len(list_of_people_in_space)
+        #number_of_people_in_space = r.json()["number"]
+        
 
         context["ti"].xcom_push(
             key="number_of_people_in_space", value=number_of_people_in_space
