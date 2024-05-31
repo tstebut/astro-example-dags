@@ -50,7 +50,6 @@ def example_astronauts():
         r = requests.get("http://api.open-notify.org/astros.json")
         number_of_people_in_space = r.json()["number"]
         list_of_people_in_space = r.json()["people"]
-
         context["ti"].xcom_push(
             key="number_of_people_in_space", value=number_of_people_in_space
         )
@@ -71,7 +70,7 @@ def example_astronauts():
 
     #Use dynamic task mapping to run the print_astronaut_craft task for each 
     #Astronaut in space
-    print_astronaut_craft.partial(greeting="Hello! :)").expand(
+    print_astronaut_craft.partial(greeting="NotHello! :)").expand(
         person_in_space=get_astronauts() #Define dependencies using TaskFlow API syntax
     )
 
