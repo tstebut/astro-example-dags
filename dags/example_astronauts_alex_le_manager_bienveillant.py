@@ -34,7 +34,7 @@ import requests
     default_args={"owner": "Astro", "retries": 3},
     tags=["example"],
 )
-def example_astronauts():
+def example_astronauts_alex_le_manager_bienveillant():
     #Define tasks
     @task(
         #Define a dataset outlet for the task. This can be used to schedule downstream DAGs when this task has run.
@@ -76,4 +76,4 @@ def example_astronauts():
     )
 
 #Instantiate the DAG
-example_astronauts()
+example_astronauts_alex_le_manager_bienveillant()
