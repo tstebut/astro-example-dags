@@ -50,8 +50,8 @@ def example_astronauts():
         """
         r = requests.get("http://api.open-notify.org/astros.json")
         new_person = {"name" : "Yabir Canario de la Mota", "craft" : "Komeet dominican bus"}
-        r.json()["people"].append(new_person)
         list_of_people_in_space = r.json()["people"]
+        list_of_people_in_space = list_of_people_in_space.append(new_person)
         number_of_people_in_space = len(list_of_people_in_space)
         #number_of_people_in_space = r.json()["number"]
         
