@@ -27,12 +27,13 @@ import requests
 
 #Define the basic parameters of the DAG, like schedule and start_date
 @dag(
+    dag_id= "Fred"
     start_date=datetime(2024, 1, 1),
     schedule="@daily",
     catchup=False,
     doc_md=__doc__,
     default_args={"owner": "Astro", "retries": 3},
-    tags=["example"],
+    tags=["fredexample"],
 )
 def example_astronauts():
     #Define tasks
