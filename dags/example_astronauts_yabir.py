@@ -33,7 +33,7 @@ import requests
     catchup=False,
     doc_md=__doc__,
     default_args={"owner": "Yabir", "retries": 3},
-    tags=["example"],
+    tags=["example_yabir"],
 )
 def example_astronauts():
     #Define tasks
